@@ -1,4 +1,3 @@
-require 'spec'
 require 'lib/pku'
 
 describe PKU do
@@ -19,6 +18,8 @@ describe PKU do
 
   it "should get the submissions" do
     @pku.should respond_to :submissions
+    PKUParser.should_receive(:submissions).and_return(["sub1", "sub2"])
+    @pku.submissions.should == ["sub1", "sub2"]
   end
 
 end
