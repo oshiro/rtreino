@@ -1,6 +1,3 @@
-require 'lib/pku'
-# require 'spec'
-
 Given /^user = "([^\"]*)"$/ do |user|
   @user = user
 end
@@ -14,5 +11,12 @@ When /^I ask for submissions$/ do
 end
 
 Then /^I should get the submissions$/ do
-  @pku.submissions.should have "5137643	rtreino	1000	Wrong Answer			GCC	30B	2009-05-12 06:49:32"
+  submissions = @pku.submissions
+  submissions[0].should =~ /5137643/
+  submissions[0].should =~ /rtreino/
+  submissions[0].should =~ /1000/
+  submissions[0].should =~ /Wrong Answer/
+  submissions[0].should =~ /GCC/
+  submissions[0].should =~ /30B/
+  submissions[0].should =~ /2009-05-12 06:49:32/
 end

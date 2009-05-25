@@ -6,7 +6,12 @@ class PKU
   end
   
   def submissions
-    
+    PKUParser.submissions
   end
   
+end
+
+class PKUParser
+  def self.submissions
+  end
 end
