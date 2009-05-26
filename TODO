@@ -1,0 +1,29 @@
+Submissão automática
+
+- Submissor automático do PKU
+    - Pegar o resultado do PKU
+    - Submeter PKU
+    - Submeter com senha
+
+Problemas
+
+- Problemas (id_no_pku,nome,link,categorias_old,origem_old)
+- Nível (facil,facil-medio,medio,medio-dificil, dificil)
+
+Usuários
+
+- Usuários (Nome, email e universidade)
+    - Ter autenticação
+    - Ativos/Inativos
+    - Id/Senha do PKU
+
+Categorização
+
+- Categorias/Origem (tags)
+
+Tarefas Futuras
+- Conjuntos de Problemas
+- Competições (Complexo)
+   - Placar
+   - Disciplina
+- Estatísticas
