@@ -4,7 +4,6 @@ Feature: Query to PKU
   I want search in PKU for user's submissions
   
   Scenario: Get One submission from a specific user
-    Given user = "rtreino"
-    And password = "password"
+    Given user = "rtreino"    
     When I ask for submissions
     Then I should get the submissions
