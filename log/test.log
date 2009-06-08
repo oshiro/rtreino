@@ -3508,3 +3508,327 @@ Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/niveis]
 Rendering niveis/show.html.erb
   [4;35;1mNivel Create (0.5ms)[0m   [0mINSERT INTO "niveis" ("created_at", "updated_at", "descricao") VALUES('2009-06-08 22:21:33', '2009-06-08 22:21:33', 'value for descricao')[0m
 Rendering problemas/new.html.erb
+REQUESTING PAGE: GET /niveis/new with {} and HTTP headers {}
+
+
+Processing NiveisController#new (for 127.0.0.1 at 2009-06-08 20:13:43) [GET]
+Rendering template within layouts/niveis
+Rendering niveis/new
+Completed in 57ms (View: 53, DB: 0) | 200 OK [http://www.example.com/niveis/new]
+REQUESTING PAGE: POST /niveis with {"nivel"=>{"descricao"=>"descricao"}, "commit"=>"Create"} and HTTP headers {"HTTP_REFERER"=>"/niveis/new"}
+
+
+Processing NiveisController#create (for 127.0.0.1 at 2009-06-08 20:13:43) [POST]
+  Parameters: {"nivel"=>{"descricao"=>"descricao"}, "commit"=>"Create"}
+  [4;36;1mNivel Create (0.6ms)[0m   [0;1mINSERT INTO "niveis" ("created_at", "updated_at", "descricao") VALUES('2009-06-08 23:13:43', '2009-06-08 23:13:43', 'descricao')[0m
+Redirected to http://www.example.com/niveis/1
+Completed in 13ms (DB: 1) | 302 Found [http://www.example.com/niveis]
+REQUESTING PAGE: GET http://www.example.com/niveis/1 with {} and HTTP headers {"HTTP_REFERER"=>"/niveis"}
+
+
+Processing NiveisController#show (for 127.0.0.1 at 2009-06-08 20:13:43) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mNivel Load (0.2ms)[0m   [0mSELECT * FROM "niveis" WHERE ("niveis"."id" = 1) [0m
+Rendering template within layouts/niveis
+Rendering niveis/show
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://www.example.com/niveis/1]
+  [4;36;1mNivel Create (0.7ms)[0m   [0;1mINSERT INTO "niveis" ("created_at", "updated_at", "descricao") VALUES('2009-06-08 23:13:43', '2009-06-08 23:13:43', 'bobo')[0m
+  [4;35;1mNivel Create (0.2ms)[0m   [0mINSERT INTO "niveis" ("created_at", "updated_at", "descricao") VALUES('2009-06-08 23:13:43', '2009-06-08 23:13:43', 'muito-bobo')[0m
+  [4;36;1mNivel Create (0.1ms)[0m   [0;1mINSERT INTO "niveis" ("created_at", "updated_at", "descricao") VALUES('2009-06-08 23:13:43', '2009-06-08 23:13:43', 'para-o-rafael-falar-uri')[0m
+  [4;35;1mNivel Create (0.1ms)[0m   [0mINSERT INTO "niveis" ("created_at", "updated_at", "descricao") VALUES('2009-06-08 23:13:43', '2009-06-08 23:13:43', 'nem-ferrando-o-rafael-fala-uri-certo')[0m
+REQUESTING PAGE: GET http://www.example.com/niveis with {} and HTTP headers {}
+
+
+Processing NiveisController#index (for 127.0.0.1 at 2009-06-08 20:13:43) [GET]
+  [4;36;1mNivel Load (0.4ms)[0m   [0;1mSELECT * FROM "niveis" [0m
+Rendering template within layouts/niveis
+Rendering niveis/index
+Completed in 5ms (View: 4, DB: 1) | 200 OK [http://www.example.com/niveis]
+REQUESTING PAGE: DELETE /niveis/3 with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/niveis"}
+
+
+Processing NiveisController#destroy (for 127.0.0.1 at 2009-06-08 20:13:43) [DELETE]
+  Parameters: {"id"=>"3"}
+  [4;35;1mNivel Load (0.2ms)[0m   [0mSELECT * FROM "niveis" WHERE ("niveis"."id" = 3) [0m
+  [4;36;1mNivel Destroy (0.1ms)[0m   [0;1mDELETE FROM "niveis" WHERE "id" = 3[0m
+Redirected to http://www.example.com/niveis
+Completed in 2ms (DB: 0) | 302 Found [http://www.example.com/niveis/3]
+REQUESTING PAGE: GET http://www.example.com/niveis with {} and HTTP headers {"HTTP_REFERER"=>"/niveis/3"}
+
+
+Processing NiveisController#index (for 127.0.0.1 at 2009-06-08 20:13:43) [GET]
+  [4;35;1mNivel Load (0.3ms)[0m   [0mSELECT * FROM "niveis" [0m
+Rendering template within layouts/niveis
+Rendering niveis/index
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://www.example.com/niveis]
+REQUESTING PAGE: GET /problemas/new with {} and HTTP headers {}
+
+
+Processing ProblemasController#new (for 127.0.0.1 at 2009-06-08 20:13:43) [GET]
+Rendering template within layouts/problemas
+Rendering problemas/new
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://www.example.com/problemas/new]
+REQUESTING PAGE: POST /problemas with {"commit"=>"Create", "problema"=>{"id_no_pku"=>"1", "categorias_old"=>"1", "nome"=>"Problema Difícil", "origem_old"=>"1", "link"=>"http://site.com"}} and HTTP headers {"HTTP_REFERER"=>"/problemas/new"}
+
+
+Processing ProblemasController#create (for 127.0.0.1 at 2009-06-08 20:13:43) [POST]
+  Parameters: {"commit"=>"Create", "problema"=>{"id_no_pku"=>"1", "categorias_old"=>"1", "nome"=>"Problema Difícil", "origem_old"=>"1", "link"=>"http://site.com"}}
+  [4;36;1mProblema Create (0.5ms)[0m   [0;1mINSERT INTO "problemas" ("id_no_pku", "categorias_old", "created_at", "nome", "updated_at", "origem_old", "link") VALUES(1, 1, '2009-06-08 23:13:43', 'Problema Difícil', '2009-06-08 23:13:43', 1, 'http://site.com')[0m
+Redirected to http://www.example.com/problemas/1
+Completed in 4ms (DB: 0) | 302 Found [http://www.example.com/problemas]
+REQUESTING PAGE: GET http://www.example.com/problemas/1 with {} and HTTP headers {"HTTP_REFERER"=>"/problemas"}
+
+
+Processing ProblemasController#show (for 127.0.0.1 at 2009-06-08 20:13:43) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProblema Load (0.3ms)[0m   [0mSELECT * FROM "problemas" WHERE ("problemas"."id" = 1) [0m
+Rendering template within layouts/problemas
+Rendering problemas/show
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://www.example.com/problemas/1]
+  [4;36;1mProblema Create (0.4ms)[0m   [0;1mINSERT INTO "problemas" ("id_no_pku", "categorias_old", "created_at", "nome", "updated_at", "origem_old", "link") VALUES(1, 1, '2009-06-08 23:13:43', 'prob1', '2009-06-08 23:13:43', 1, '1.com')[0m
+  [4;35;1mProblema Create (0.1ms)[0m   [0mINSERT INTO "problemas" ("id_no_pku", "categorias_old", "created_at", "nome", "updated_at", "origem_old", "link") VALUES(2, 2, '2009-06-08 23:13:43', 'prob2', '2009-06-08 23:13:43', 2, '2.com')[0m
+  [4;36;1mProblema Create (0.1ms)[0m   [0;1mINSERT INTO "problemas" ("id_no_pku", "categorias_old", "created_at", "nome", "updated_at", "origem_old", "link") VALUES(3, 3, '2009-06-08 23:13:43', 'prob3', '2009-06-08 23:13:43', 3, '3.com')[0m
+  [4;35;1mProblema Create (0.1ms)[0m   [0mINSERT INTO "problemas" ("id_no_pku", "categorias_old", "created_at", "nome", "updated_at", "origem_old", "link") VALUES(4, 4, '2009-06-08 23:13:43', 'prob4', '2009-06-08 23:13:43', 4, '4.com')[0m
+REQUESTING PAGE: GET http://www.example.com/problemas with {} and HTTP headers {}
+
+
+Processing ProblemasController#index (for 127.0.0.1 at 2009-06-08 20:13:43) [GET]
+  [4;36;1mProblema Load (0.7ms)[0m   [0;1mSELECT * FROM "problemas" [0m
+Rendering template within layouts/problemas
+Rendering problemas/index
+Completed in 7ms (View: 5, DB: 1) | 200 OK [http://www.example.com/problemas]
+REQUESTING PAGE: DELETE /problemas/3 with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/problemas"}
+
+
+Processing ProblemasController#destroy (for 127.0.0.1 at 2009-06-08 20:13:43) [DELETE]
+  Parameters: {"id"=>"3"}
+  [4;35;1mProblema Load (0.3ms)[0m   [0mSELECT * FROM "problemas" WHERE ("problemas"."id" = 3) [0m
+  [4;36;1mProblema Destroy (0.1ms)[0m   [0;1mDELETE FROM "problemas" WHERE "id" = 3[0m
+Redirected to http://www.example.com/problemas
+Completed in 2ms (DB: 0) | 302 Found [http://www.example.com/problemas/3]
+REQUESTING PAGE: GET http://www.example.com/problemas with {} and HTTP headers {"HTTP_REFERER"=>"/problemas/3"}
+
+
+Processing ProblemasController#index (for 127.0.0.1 at 2009-06-08 20:13:43) [GET]
+  [4;35;1mProblema Load (0.5ms)[0m   [0mSELECT * FROM "problemas" [0m
+Rendering template within layouts/problemas
+Rendering problemas/index
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://www.example.com/problemas]
+Rendering problemas/show.html.erb
+
+
+Processing ProblemasController#destroy (for 0.0.0.0 at 2009-06-08 20:13:45) [DELETE]
+  Parameters: {"id"=>"37"}
+Redirected to http://test.host/problemas
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/problemas/37]
+
+
+Processing ProblemasController#destroy (for 0.0.0.0 at 2009-06-08 20:13:45) [DELETE]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/problemas
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/problemas/1]
+
+
+Processing ProblemasController#update (for 0.0.0.0 at 2009-06-08 20:13:45) [PUT]
+  Parameters: {"problema"=>{"these"=>"params"}, "id"=>"37"}
+Rendering template within layouts/problemas
+Rendering problemas/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/problemas/37?problema%5Bthese%5D=params]
+
+
+Processing ProblemasController#update (for 0.0.0.0 at 2009-06-08 20:13:45) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/problemas
+Rendering problemas/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/problemas/1]
+
+
+Processing ProblemasController#update (for 0.0.0.0 at 2009-06-08 20:13:45) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/problemas
+Rendering problemas/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/problemas/1]
+
+
+Processing ProblemasController#update (for 0.0.0.0 at 2009-06-08 20:13:45) [PUT]
+  Parameters: {"problema"=>{"these"=>"params"}, "id"=>"37"}
+Rendering template within layouts/problemas
+Rendering problemas/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/problemas/37?problema%5Bthese%5D=params]
+
+
+Processing ProblemasController#update (for 0.0.0.0 at 2009-06-08 20:13:45) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/problemas/1008
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/problemas/1]
+
+
+Processing ProblemasController#update (for 0.0.0.0 at 2009-06-08 20:13:45) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/problemas/1009
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/problemas/1]
+
+
+Processing ProblemasController#create (for 0.0.0.0 at 2009-06-08 20:13:45) [POST]
+  Parameters: {"problema"=>{"these"=>"params"}}
+Rendering template within layouts/problemas
+Rendering problemas/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/problemas?problema%5Bthese%5D=params]
+
+
+Processing ProblemasController#create (for 0.0.0.0 at 2009-06-08 20:13:45) [POST]
+  Parameters: {"problema"=>{}}
+Rendering template within layouts/problemas
+Rendering problemas/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/problemas?]
+
+
+Processing ProblemasController#create (for 0.0.0.0 at 2009-06-08 20:13:45) [POST]
+  Parameters: {"problema"=>{"these"=>"params"}}
+Redirected to http://test.host/problemas/1012
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/problemas?problema%5Bthese%5D=params]
+
+
+Processing ProblemasController#create (for 0.0.0.0 at 2009-06-08 20:13:45) [POST]
+  Parameters: {"problema"=>{}}
+Redirected to http://test.host/problemas/1013
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/problemas?]
+
+
+Processing ProblemasController#edit (for 0.0.0.0 at 2009-06-08 20:13:45) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/problemas
+Rendering problemas/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/problemas/37/edit]
+
+
+Processing ProblemasController#new (for 0.0.0.0 at 2009-06-08 20:13:45) [GET]
+Rendering template within layouts/problemas
+Rendering problemas/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/problemas/new]
+
+
+Processing ProblemasController#show (for 0.0.0.0 at 2009-06-08 20:13:45) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/problemas
+Rendering problemas/show
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/problemas/37]
+
+
+Processing ProblemasController#index (for 0.0.0.0 at 2009-06-08 20:13:45) [GET]
+Rendering template within layouts/problemas
+Rendering problemas/index
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/problemas]
+Rendering problemas/index.html.erb
+Rendering problemas/edit.html.erb
+  [4;36;1mProblema Create (0.6ms)[0m   [0;1mINSERT INTO "problemas" ("id_no_pku", "categorias_old", "created_at", "nome", "updated_at", "origem_old", "link") VALUES(1, 1, '2009-06-08 23:13:45', 'value for nome', '2009-06-08 23:13:45', 1, 'value for link')[0m
+Rendering niveis/edit.html.erb
+Rendering niveis/index.html.erb
+Rendering niveis/new.html.erb
+
+
+Processing NiveisController#destroy (for 0.0.0.0 at 2009-06-08 20:13:45) [DELETE]
+  Parameters: {"id"=>"37"}
+Redirected to http://test.host/niveis
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/niveis/37]
+
+
+Processing NiveisController#destroy (for 0.0.0.0 at 2009-06-08 20:13:45) [DELETE]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/niveis
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/niveis/1]
+
+
+Processing NiveisController#update (for 0.0.0.0 at 2009-06-08 20:13:45) [PUT]
+  Parameters: {"nivel"=>{"these"=>"params"}, "id"=>"37"}
+Rendering template within layouts/niveis
+Rendering niveis/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/niveis/37?nivel%5Bthese%5D=params]
+
+
+Processing NiveisController#update (for 0.0.0.0 at 2009-06-08 20:13:45) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/niveis
+Rendering niveis/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/niveis/1]
+
+
+Processing NiveisController#update (for 0.0.0.0 at 2009-06-08 20:13:45) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/niveis
+Rendering niveis/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/niveis/1]
+
+
+Processing NiveisController#update (for 0.0.0.0 at 2009-06-08 20:13:45) [PUT]
+  Parameters: {"nivel"=>{"these"=>"params"}, "id"=>"37"}
+Rendering template within layouts/niveis
+Rendering niveis/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/niveis/37?nivel%5Bthese%5D=params]
+
+
+Processing NiveisController#update (for 0.0.0.0 at 2009-06-08 20:13:45) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/niveis/1031
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/niveis/1]
+
+
+Processing NiveisController#update (for 0.0.0.0 at 2009-06-08 20:13:45) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/niveis/1032
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/niveis/1]
+
+
+Processing NiveisController#create (for 0.0.0.0 at 2009-06-08 20:13:45) [POST]
+  Parameters: {"nivel"=>{"these"=>"params"}}
+Rendering template within layouts/niveis
+Rendering niveis/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/niveis?nivel%5Bthese%5D=params]
+
+
+Processing NiveisController#create (for 0.0.0.0 at 2009-06-08 20:13:45) [POST]
+  Parameters: {"nivel"=>{}}
+Rendering template within layouts/niveis
+Rendering niveis/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/niveis?]
+
+
+Processing NiveisController#create (for 0.0.0.0 at 2009-06-08 20:13:46) [POST]
+  Parameters: {"nivel"=>{"these"=>"params"}}
+Redirected to http://test.host/niveis/1035
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/niveis?nivel%5Bthese%5D=params]
+
+
+Processing NiveisController#create (for 0.0.0.0 at 2009-06-08 20:13:46) [POST]
+  Parameters: {"nivel"=>{}}
+Redirected to http://test.host/niveis/1036
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/niveis?]
+
+
+Processing NiveisController#edit (for 0.0.0.0 at 2009-06-08 20:13:46) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/niveis
+Rendering niveis/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/niveis/37/edit]
+
+
+Processing NiveisController#new (for 0.0.0.0 at 2009-06-08 20:13:46) [GET]
+Rendering template within layouts/niveis
+Rendering niveis/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/niveis/new]
+
+
+Processing NiveisController#show (for 0.0.0.0 at 2009-06-08 20:13:46) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/niveis
+Rendering niveis/show
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/niveis/37]
+
+
+Processing NiveisController#index (for 0.0.0.0 at 2009-06-08 20:13:46) [GET]
+Rendering template within layouts/niveis
+Rendering niveis/index
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/niveis]
+Rendering niveis/show.html.erb
+  [4;35;1mNivel Create (0.5ms)[0m   [0mINSERT INTO "niveis" ("created_at", "updated_at", "descricao") VALUES('2009-06-08 23:13:46', '2009-06-08 23:13:46', 'value for descricao')[0m
+Rendering problemas/new.html.erb
