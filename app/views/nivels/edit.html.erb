@@ -1,0 +1,16 @@
+<h1>Editing nivel</h1>
+
+<% form_for(@nivel) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :descricao %><br />
+    <%= f.text_field :descricao %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @nivel %> |
+<%= link_to 'Back', nivels_path %>

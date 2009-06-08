@@ -1,0 +1,28 @@
+<p>
+  <b>Id no pku:</b>
+  <%=h @problema.id_no_pku %>
+</p>
+
+<p>
+  <b>Nome:</b>
+  <%=h @problema.nome %>
+</p>
+
+<p>
+  <b>Link:</b>
+  <%=h @problema.link %>
+</p>
+
+<p>
+  <b>Categorias old:</b>
+  <%=h @problema.categorias_old %>
+</p>
+
+<p>
+  <b>Origem old:</b>
+  <%=h @problema.origem_old %>
+</p>
+
+
+<%= link_to 'Edit', edit_problema_path(@problema) %> |
+<%= link_to 'Back', problemas_path %>

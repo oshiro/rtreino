@@ -10,6 +10,12 @@ module NavigationHelpers
     
     when /the homepage/
       '/'
+    when /the new nivel page/
+      new_nivel_path
+
+    when /the new problema page/
+      new_problema_path
+
     
     # Add more mappings here.
     # Here is a more fancy example:

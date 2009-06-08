@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  id_no_pku: 1
+  nome: MyString
+  link: MyString
+  categorias_old: 1
+  origem_old: 1
+
+two:
+  id_no_pku: 1
+  nome: MyString
+  link: MyString
+  categorias_old: 1
+  origem_old: 1

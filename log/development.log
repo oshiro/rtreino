@@ -1,0 +1,726 @@
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (17.9ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProblemas (20090608212820)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCREATE TABLE "problemas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "id_no_pku" integer, "nome" varchar(255), "link" varchar(255), "categorias_old" integer, "origem_old" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090608212820')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("problemas")[0m
+
+
+Processing Rails::InfoController#properties (for 127.0.0.1 at 2009-06-08 18:29:03) [GET]
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Completed in 52ms (View: 5, DB: 1) | 200 OK [http://localhost/rails/info/properties]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-08 18:29:12) [GET]
+
+ActionController::RoutingError (No route matches "/problema" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProblemasController#index (for 127.0.0.1 at 2009-06-08 18:29:15) [GET]
+  [4;36;1mProblema Load (0.4ms)[0m   [0;1mSELECT * FROM "problemas" [0m
+Rendering template within layouts/problemas
+Rendering problemas/index
+Completed in 58ms (View: 54, DB: 0) | 200 OK [http://localhost/problemas]
+
+
+Processing ProblemasController#new (for 127.0.0.1 at 2009-06-08 18:29:17) [GET]
+Rendering template within layouts/problemas
+Rendering problemas/new
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/problemas/new]
+
+
+Processing ProblemasController#create (for 127.0.0.1 at 2009-06-08 18:29:34) [POST]
+  Parameters: {"commit"=>"Create", "problema"=>{"id_no_pku"=>"10", "categorias_old"=>"10", "nome"=>"Fabs", "origem_old"=>"10", "link"=>"http://uol.com.br"}, "authenticity_token"=>"5IkCXmuZlMi0NYV+890hvtJSRYLSTKCd7vSX7vINIKI="}
+  [4;35;1mProblema Create (0.9ms)[0m   [0mINSERT INTO "problemas" ("id_no_pku", "categorias_old", "created_at", "nome", "updated_at", "origem_old", "link") VALUES(10, 10, '2009-06-08 21:29:34', 'Fabs', '2009-06-08 21:29:34', 10, 'http://uol.com.br')[0m
+Redirected to http://localhost:3000/problemas/1
+Completed in 27ms (DB: 1) | 302 Found [http://localhost/problemas]
+
+
+Processing ProblemasController#show (for 127.0.0.1 at 2009-06-08 18:29:34) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProblema Load (0.3ms)[0m   [0;1mSELECT * FROM "problemas" WHERE ("problemas"."id" = 1) [0m
+Rendering template within layouts/problemas
+Rendering problemas/show
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/problemas/1]
+
+
+Processing ProblemasController#index (for 127.0.0.1 at 2009-06-08 18:29:39) [GET]
+  [4;35;1mProblema Load (0.5ms)[0m   [0mSELECT * FROM "problemas" [0m
+Rendering template within layouts/problemas
+Rendering problemas/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/problemas]
+
+
+Processing ProblemasController#edit (for 127.0.0.1 at 2009-06-08 18:29:42) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProblema Load (0.3ms)[0m   [0;1mSELECT * FROM "problemas" WHERE ("problemas"."id" = 1) [0m
+Rendering template within layouts/problemas
+Rendering problemas/edit
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/problemas/1/edit]
+
+
+Processing ProblemasController#destroy (for 127.0.0.1 at 2009-06-08 18:29:46) [DELETE]
+  Parameters: {"authenticity_token"=>"5IkCXmuZlMi0NYV+890hvtJSRYLSTKCd7vSX7vINIKI=", "id"=>"1"}
+  [4;35;1mProblema Load (0.5ms)[0m   [0mSELECT * FROM "problemas" WHERE ("problemas"."id" = 1) [0m
+  [4;36;1mProblema Destroy (0.6ms)[0m   [0;1mDELETE FROM "problemas" WHERE "id" = 1[0m
+Redirected to http://localhost:3000/problemas
+Completed in 9ms (DB: 1) | 302 Found [http://localhost/problemas/1]
+
+
+Processing ProblemasController#index (for 127.0.0.1 at 2009-06-08 18:29:47) [GET]
+  [4;35;1mProblema Load (0.4ms)[0m   [0mSELECT * FROM "problemas" [0m
+Rendering template within layouts/problemas
+Rendering problemas/index
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://localhost/problemas]
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCREATE TABLE "problemas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "id_no_pku" integer, "nome" varchar(255), "link" varchar(255), "categorias_old" integer, "origem_old" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (15.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090608212820')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mCREATE TABLE "problemas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "id_no_pku" integer, "nome" varchar(255), "link" varchar(255), "categorias_old" integer, "origem_old" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.6ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090608212820')[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mCREATE TABLE "problemas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "id_no_pku" integer, "nome" varchar(255), "link" varchar(255), "categorias_old" integer, "origem_old" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.5ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090608212820')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mCREATE TABLE "problemas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "id_no_pku" integer, "nome" varchar(255), "link" varchar(255), "categorias_old" integer, "origem_old" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.6ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090608212820')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCREATE TABLE "problemas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "id_no_pku" integer, "nome" varchar(255), "link" varchar(255), "categorias_old" integer, "origem_old" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090608212820')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mCREATE TABLE "problemas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "id_no_pku" integer, "nome" varchar(255), "link" varchar(255), "categorias_old" integer, "origem_old" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (325.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.1ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (4.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090608212820')[0m
+
+
+Processing ProblemasController#index (for 127.0.0.1 at 2009-06-08 19:07:29) [GET]
+  [4;36;1mProblema Load (0.8ms)[0m   [0;1mSELECT * FROM "problemas" [0m
+Rendering template within layouts/problemas
+Rendering problemas/index
+Completed in 14ms (View: 9, DB: 1) | 200 OK [http://localhost/problemas]
+
+
+Processing ProblemasController#new (for 127.0.0.1 at 2009-06-08 19:07:30) [GET]
+Rendering template within layouts/problemas
+Rendering problemas/new
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/problemas/new]
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProblemas (20090608212820)
+Migrating to CreateNivels (20090608220927)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TABLE "nivels" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090608220927')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("nivels")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("problemas")[0m
+
+
+Processing NivelsController#index (for 127.0.0.1 at 2009-06-08 19:11:29) [GET]
+  [4;35;1mNivel Load (0.6ms)[0m   [0mSELECT * FROM "nivels" [0m
+Rendering template within layouts/nivels
+Rendering nivels/index
+Completed in 18ms (View: 13, DB: 1) | 200 OK [http://localhost/nivels]
+
+
+Processing NivelsController#index (for 127.0.0.1 at 2009-06-08 19:12:30) [GET]
+  [4;36;1mNivel Load (0.6ms)[0m   [0;1mSELECT * FROM "nivels" [0m
+Rendering template within layouts/nivels
+Rendering nivels/index
+Completed in 10ms (View: 6, DB: 1) | 200 OK [http://localhost/nivels]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-08 19:12:34) [GET]
+
+ActionController::RoutingError (No route matches "/niveis" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-08 19:12:40) [GET]
+
+ActionController::RoutingError (No route matches "/niveis" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-08 19:12:42) [GET]
+
+ActionController::RoutingError (No route matches "/niveis" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-08 19:12:49) [GET]
+
+ActionController::RoutingError (No route matches "/niveis" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-08 19:12:50) [GET]
+
+ActionController::RoutingError (No route matches "/niveis" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-08 19:12:51) [GET]
+
+ActionController::RoutingError (No route matches "/niveis" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-08 19:12:52) [GET]
+
+ActionController::RoutingError (No route matches "/niveis" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing NivelsController#index (for 127.0.0.1 at 2009-06-08 19:12:54) [GET]
+  [4;36;1mNivel Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such table: niveis: SELECT * FROM "niveis" [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: niveis: SELECT * FROM "niveis" ):
+  app/controllers/nivels_controller.rb:5:in `index'
+  haml (2.0.9) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (40.1ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing NivelsController#index (for 127.0.0.1 at 2009-06-08 19:12:56) [GET]
+  [4;35;1mNivel Load (0.0ms)[0m   [0mSQLite3::SQLException: no such table: niveis: SELECT * FROM "niveis" [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: niveis: SELECT * FROM "niveis" ):
+  app/controllers/nivels_controller.rb:5:in `index'
+  haml (2.0.9) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (96.3ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.5ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProblemas (20090608212820)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "problemas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "id_no_pku" integer, "nome" varchar(255), "link" varchar(255), "categorias_old" integer, "origem_old" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090608212820')[0m
+Migrating to CreateNivels (20090608220927)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "nivels" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090608220927')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("nivels")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("problemas")[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-08 19:13:11) [GET]
+
+ActionController::RoutingError (No route matches "/nive" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-08 19:13:14) [GET]
+
+ActionController::RoutingError (No route matches "/niveis" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing NivelsController#index (for 127.0.0.1 at 2009-06-08 19:13:16) [GET]
+  [4;36;1mNivel Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such table: niveis: SELECT * FROM "niveis" [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: niveis: SELECT * FROM "niveis" ):
+  app/controllers/nivels_controller.rb:5:in `index'
+  haml (2.0.9) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (36.3ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing NivelsController#index (for 127.0.0.1 at 2009-06-08 19:13:20) [GET]
+  [4;35;1mNivel Load (0.0ms)[0m   [0mSQLite3::SQLException: no such table: niveis: SELECT * FROM "niveis" [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: niveis: SELECT * FROM "niveis" ):
+  app/controllers/nivels_controller.rb:5:in `index'
+  haml (2.0.9) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (102.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProblemas (20090608212820)
+Migrating to CreateNivels (20090608220927)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("nivels")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("problemas")[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.6ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProblemas (20090608212820)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCREATE TABLE "problemas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "id_no_pku" integer, "nome" varchar(255), "link" varchar(255), "categorias_old" integer, "origem_old" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090608212820')[0m
+Migrating to CreateNivels (20090608220927)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "nivels" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090608220927')[0m
+Migrating to CreateNiveis (20090608221356)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "niveis" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090608221356')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("niveis")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("nivels")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("problemas")[0m
+
+
+Processing NiveisController#index (for 127.0.0.1 at 2009-06-08 19:14:36) [GET]
+  [4;36;1mNivel Load (0.7ms)[0m   [0;1mSELECT * FROM "niveis" [0m
+Rendering template within layouts/niveis
+Rendering niveis/index
+Completed in 16ms (View: 11, DB: 1) | 200 OK [http://localhost/niveis]
+
+
+Processing NiveisController#index (for 127.0.0.1 at 2009-06-08 19:14:59) [GET]
+  [4;35;1mNivel Load (0.6ms)[0m   [0mSELECT * FROM "niveis" [0m
+Rendering template within layouts/niveis
+Rendering niveis/index
+Completed in 8ms (View: 4, DB: 1) | 200 OK [http://localhost/niveis]
+
+
+Processing NiveisController#index (for 127.0.0.1 at 2009-06-08 19:15:01) [GET]
+  [4;36;1mNivel Load (0.7ms)[0m   [0;1mSELECT * FROM "niveis" [0m
+Rendering template within layouts/niveis
+Rendering niveis/index
+Completed in 9ms (View: 5, DB: 1) | 200 OK [http://localhost/niveis]
+
+
+Processing NiveisController#edit (for 127.0.0.1 at 2009-06-08 19:15:04) [GET]
+  Parameters: {"id"=>"50"}
+  [4;35;1mNivel Load (0.2ms)[0m   [0mSELECT * FROM "niveis" WHERE ("niveis"."id" = 50) [0m
+Rendering template within layouts/niveis
+Rendering niveis/edit
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/niveis/50/edit]
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mCREATE TABLE "niveis" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mCREATE TABLE "nivels" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mCREATE TABLE "problemas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "id_no_pku" integer, "nome" varchar(255), "link" varchar(255), "categorias_old" integer, "origem_old" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.7ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090608221356')[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090608212820')[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090608220927')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mCREATE TABLE "niveis" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mCREATE TABLE "nivels" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mCREATE TABLE "problemas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "id_no_pku" integer, "nome" varchar(255), "link" varchar(255), "categorias_old" integer, "origem_old" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.1ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090608221356')[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090608212820')[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090608220927')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mCREATE TABLE "niveis" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mCREATE TABLE "nivels" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCREATE TABLE "problemas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "id_no_pku" integer, "nome" varchar(255), "link" varchar(255), "categorias_old" integer, "origem_old" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.5ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090608221356')[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090608212820')[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090608220927')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mCREATE TABLE "niveis" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "nivels" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (19.5ms)[0m   [0;1mCREATE TABLE "problemas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "id_no_pku" integer, "nome" varchar(255), "link" varchar(255), "categorias_old" integer, "origem_old" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (4.9ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090608221356')[0m
+  [4;35;1mSQL (5.2ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090608212820')[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090608220927')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mCREATE TABLE "niveis" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCREATE TABLE "nivels" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mCREATE TABLE "problemas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "id_no_pku" integer, "nome" varchar(255), "link" varchar(255), "categorias_old" integer, "origem_old" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090608221356')[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090608212820')[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090608220927')[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mCREATE TABLE "niveis" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "nivels" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCREATE TABLE "problemas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "id_no_pku" integer, "nome" varchar(255), "link" varchar(255), "categorias_old" integer, "origem_old" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.8ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090608221356')[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090608212820')[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090608220927')[0m

@@ -1,0 +1,32 @@
+<h1>Editing problema</h1>
+
+<% form_for(@problema) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :id_no_pku %><br />
+    <%= f.text_field :id_no_pku %>
+  </p>
+  <p>
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </p>
+  <p>
+    <%= f.label :link %><br />
+    <%= f.text_field :link %>
+  </p>
+  <p>
+    <%= f.label :categorias_old %><br />
+    <%= f.text_field :categorias_old %>
+  </p>
+  <p>
+    <%= f.label :origem_old %><br />
+    <%= f.text_field :origem_old %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @problema %> |
+<%= link_to 'Back', problemas_path %>

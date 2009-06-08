@@ -1,0 +1,28 @@
+<h1>Listing problemas</h1>
+
+<table>
+  <tr>
+    <th>Id no pku</th>
+    <th>Nome</th>
+    <th>Link</th>
+    <th>Categorias old</th>
+    <th>Origem old</th>
+  </tr>
+
+<% @problemas.each do |problema| %>
+  <tr>
+    <td><%=h problema.id_no_pku %></td>
+    <td><%=h problema.nome %></td>
+    <td><%=h problema.link %></td>
+    <td><%=h problema.categorias_old %></td>
+    <td><%=h problema.origem_old %></td>
+    <td><%= link_to 'Show', problema %></td>
+    <td><%= link_to 'Edit', edit_problema_path(problema) %></td>
+    <td><%= link_to 'Destroy', problema, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New problema', new_problema_path %>

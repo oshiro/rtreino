@@ -1,0 +1,20 @@
+<h1>Listing niveis</h1>
+
+<table>
+  <tr>
+    <th>Descricao</th>
+  </tr>
+
+<% @niveis.each do |nivel| %>
+  <tr>
+    <td><%=h nivel.descricao %></td>
+    <td><%= link_to 'Show', nivel %></td>
+    <td><%= link_to 'Edit', edit_nivel_path(nivel) %></td>
+    <td><%= link_to 'Destroy', nivel, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New nivel', new_nivel_path %>
